@@ -1,0 +1,21 @@
+{
+  "name": "SelectPro",
+  "short_name": "SelectPro",
+  "description": "5.6Swift ISO | SelectPro - Professional AI-powered photo selection studio.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#0a0a0a",
+  "icons": [
+    {
+      "src": "https://picsum.photos/seed/studio-icon/192/192",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://picsum.photos/seed/studio-icon/512/512",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

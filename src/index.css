@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+@theme {
+  --color-system-bg: #0a0a0b;
+  --color-system-card: #111113;
+  --color-system-text: #f0ede8;
+  --color-system-secondary: #7a7870;
+  --color-system-accent: #00c2ff;
+  --color-system-highlight: #e8a020;
+  --color-system-border: #242428;
+  --color-system-sidebar: #0e0e10;
+  --color-neutral-grey: rgb(30, 30, 32);
+  --color-neutral-grey-active: rgb(50, 50, 55);
+  
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-system-bg text-system-text antialiased;
+  }
+}
+
+@layer utilities {
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    border: 1px solid transparent;
+    background-clip: content-box;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.5);
+    background-clip: content-box;
+  }
+
+  /* Dark mode scrollbar */
+  .dark-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .dark-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  /* Hide scrollbar but keep functionality */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+  .image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: black;
+    overflow: hidden;
+  }
+
+  .image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* critical */
+    image-rendering: auto;
+  }
+
+  /* Handles iPhone notch / Android gesture bar */
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom, 12px);
+  }
+
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .animate-marquee {
+    animation: marquee 60s linear infinite;
+  }
+}
